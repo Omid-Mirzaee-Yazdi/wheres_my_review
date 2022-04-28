@@ -17,7 +17,7 @@ try {
     core.setFailed(validationRes.message);
   }
 
-  console.log(`Hello ${who}! your phone number is  ${number}`);
+  console.log(`config`);
   const time = new Date().toTimeString();
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
