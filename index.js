@@ -22,6 +22,7 @@ try {
     twillioAuthToken: core.getInput("twillioAuthToken"),
     twillioNumber: core.getInput("twillioNumber"),
   };
+  console.log(`twillio added`);
 
   //   const validationRes = validate(config);
   //   if (!validationRes.ok) {
