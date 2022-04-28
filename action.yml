@@ -1,0 +1,17 @@
+name: "Wheres my review"
+description: "poke your senoir developer to review your code"
+inputs:
+  who: # id of input
+    description: "Who to poke"
+    required: true
+    default: "Omid"
+  number: # id of input
+    description: "phone number to call"
+    required: true
+    default: "World"
+outputs:
+  time: # id of output
+    description: "The time I poked them"
+runs:
+  using: "node16"
+  main: "index.js"
