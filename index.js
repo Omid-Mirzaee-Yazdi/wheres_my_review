@@ -26,7 +26,6 @@ try {
 
   const validationRes = validate(config);
   if (!validationRes.ok) {
-    console.log(validationRes.error);
     core.setFailed(validationRes.error);
   }
 
@@ -39,13 +38,13 @@ try {
       "please review the code Mr. Senior developer, we have other stuff to do.",
     ],
     angry: [
-      "I am still waiting, what are you doing. I amm not as senior but I am well aware that it wont take that long,",
+      "I am still waiting, what are you doing. I am not as senior as you are, but I am well aware that it will not take that long.",
       "bruh, you are making me crazy, review the code, thanks bye",
       "This is the last time im asking you, can you please? it take two minutes, you know what am I talking about, ugh",
     ],
     outrageous: [
-      "I have no idea who told you you are a senior developer when you dont even review my pull request",
-      "You good for nothing developer, and you call yourself. quote. senior? the whole team is waiting for your stupid code review! can you please?",
+      "I have no idea who told you that you are a senior developer when you dont even review my pull request, for gods sake.",
+      "You good for nothing developer, and you call yourself. quote. senior? the whole team is waiting for your stupid code review! can you please? good lord",
       "you lazy, good for nothing developer! go do your homework, the whole team is waiting for your stupid review to nag on the camelcase naming and whatnot, jesus christ.",
     ],
   };
@@ -70,9 +69,6 @@ try {
 
   const time = new Date().toTimeString();
   core.setOutput("time", time);
-
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }

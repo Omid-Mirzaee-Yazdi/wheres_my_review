@@ -1,17 +1,18 @@
 name: "Wheres my review"
-author:
+author: "OMid Mirzaee Yazdi"
 description: "poke your senoir developer to review your code"
 inputs:
   who:
     description: "Who to poke"
     required: false
+    default: "Mr. so called senior developer!"
   number:
     description: "Phone number to call"
     required: true
   severity:
     description: "How angry do you want the poke to be?"
     required: false
-    default: "angry"
+    default: "outrageous"
   twillioSID:
     description: "Twillio account SID"
     required: true
@@ -23,7 +24,7 @@ inputs:
     required: true
 
 outputs:
-  time: # id of output
+  time:
     description: "The time I poked them"
 runs:
   using: "node16"
