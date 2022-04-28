@@ -50,7 +50,7 @@ try {
   const selectedArray = messages[config.severity];
   const selectedSentence =
     selectedArray[Math.floor(Math.random() * selectedArray.length)];
-  const encodedSentece = selectedSentence.replace(" ", "%20");
+  const encodedSentece = selectedSentence.replaceAll(" ", "%20");
   client.calls
     .create({
       url:
