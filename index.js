@@ -35,7 +35,7 @@ try {
     .create({
       url:
         "https://handler.twilio.com/twiml/EH3bedf0ab841a726b3a4fa442d181a108" +
-        `?text=just to test the dynamic text ${config.who}`.replace(" ", "%20"),
+        `?text=${config.who}`,
       from: config.twillioNumber,
       to: config.number,
     })
