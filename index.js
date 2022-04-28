@@ -24,10 +24,11 @@ try {
   };
   console.log(`twillio added`);
 
-  //   const validationRes = validate(config);
-  //   if (!validationRes.ok) {
-  //     core.setFailed(validationRes.error);
-  //   }
+  const validationRes = validate(config);
+  if (!validationRes.ok) {
+    console.log(validationRes.error);
+    core.setFailed(validationRes.error);
+  }
 
   const client = require("twilio")(config.twillioSID, config.twillioAuthToken);
   const greetingList = ["hello", "hey", "whatsup"];
