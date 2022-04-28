@@ -1,4 +1,4 @@
-export const validate = (config) => {
+const validate = (config) => {
   const allowedSeverity = ["be nice", "angry", "outrageous"];
   for (const [key, value] of Object.entries(values)) {
     if (key !== "who" || !value)
