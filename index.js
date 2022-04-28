@@ -25,13 +25,23 @@ try {
 
   //   const validationRes = validate(config);
   //   if (!validationRes.ok) {
-  //     core.setFailed(validationRes.message);
+  //     core.setFailed(validationRes.error);
   //   }
 
-  console.log(config);
+  const client = require("twilio")(config.twillioSID, config.twillioAuthToken);
+
+  client.calls
+    .create({
+      from: config.twillioNumber,
+      to: config.number,
+      text: "just to test",
+    })
+    .then((call) => console.log("called successfully", call))
+    .catch((e) => console.log("twillio error: ", e));
+
   const time = new Date().toTimeString();
   core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
+
   const payload = JSON.stringify(github.context.payload, undefined, 2);
   console.log(`The event payload: ${payload}`);
 } catch (error) {
