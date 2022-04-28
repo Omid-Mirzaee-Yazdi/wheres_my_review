@@ -36,7 +36,7 @@ try {
       from: config.twillioNumber,
       to: config.number,
       text: "just to test",
-      url: "https://handler.twilio.com/twiml/EH3bedf0ab841a726b3a4fa442d181a108",
+      Url: "https://handler.twilio.com/twiml/EH3bedf0ab841a726b3a4fa442d181a108",
     })
     .then((call) => console.log("called successfully", call))
     .catch((e) => console.log("twillio error: ", e));
