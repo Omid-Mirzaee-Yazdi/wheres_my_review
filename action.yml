@@ -11,7 +11,7 @@ inputs:
   severity:
     description: "How angry do you want the poke to be?"
     required: false
-    default: "nice"
+    default: "angry"
   twillioSID:
     description: "Twillio account SID"
     required: true

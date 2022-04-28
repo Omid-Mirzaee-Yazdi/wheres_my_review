@@ -30,27 +30,32 @@ try {
   //   }
 
   const client = require("twilio")(config.twillioSID, config.twillioAuthToken);
-  const greet = ["hello,", "hey,", "whatsup"];
+  const greetingList = ["hello", "hey", "whatsup"];
   const messages = {
     nice: [
-      "would you please review my code",
-      "sir, im waiting for your review",
-      "please review the code Mr. Senior developer",
+      "would you please review my code, we are running out of time sir, thank you so much",
+      "sir, im waiting for your review, I would appreciate if you apare a moment since the whole crew is awaiting your precious opinion. much appreciated!",
+      "please review the code Mr. Senior developer, we have other stuff to do.",
     ],
     angry: [
-      "I am still waiting, what are you doing",
-      "bruh, you are making me crazy, review the code",
-      "can you please? it take two minutes, you know what am I talking about, ugh",
+      "I am still waiting, what are you doing. I amm not as senior but I am well aware that it wont take that long,",
+      "bruh, you are making me crazy, review the code, thanks bye",
+      "This is the last time im asking you, can you please? it take two minutes, you know what am I talking about, ugh",
     ],
     outrageous: [
       "I have no idea who told you you are a senior developer when you dont even review my pull request",
-      "You good for nothing developer, the whole team is waiting for your stupid code review! can you please?",
+      "You good for nothing developer, and you call yourself. quote. senior? the whole team is waiting for your stupid code review! can you please?",
+      "you lazy, good for nothing developer! go do your homework, the whole team is waiting for your stupid review to nag on the camelcase naming and whatnot, jesus christ.",
     ],
   };
   const selectedArray = messages[config.severity];
   const selectedSentence =
     selectedArray[Math.floor(Math.random() * selectedArray.length)];
-  const encodedSentece = selectedSentence.replaceAll(" ", "%20");
+  const greeting = `${
+    greetingList[Math.floor(Math.random() * greetingList.length)]
+  }, ${config.who}...`;
+  const encodedSentece =
+    greeting.replaceAll(" ", "%20") + selectedSentence.replaceAll(" ", "%20");
   client.calls
     .create({
       url:
