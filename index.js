@@ -23,12 +23,12 @@ try {
     twillioNumber: core.getInput("twillioNumber"),
   };
 
-  const validationRes = validate(config);
-  if (!validationRes.ok) {
-    core.setFailed(validationRes.message);
-  }
+  //   const validationRes = validate(config);
+  //   if (!validationRes.ok) {
+  //     core.setFailed(validationRes.message);
+  //   }
 
-  console.log(`config`);
+  console.log(config);
   const time = new Date().toTimeString();
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow

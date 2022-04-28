@@ -9,8 +9,8 @@ inputs:
     description: "Phone number to call"
     required: true
   severity:
-    description: "How angry do you want th epoke to be?"
-    required: true
+    description: "How angry do you want the poke to be?"
+    required: false
     default: "be nice"
   twillioSID:
     description: "Twillio account SID"
