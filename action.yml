@@ -1,14 +1,27 @@
 name: "Wheres my review"
+author:
 description: "poke your senoir developer to review your code"
 inputs:
-  who: # id of input
+  who:
     description: "Who to poke"
+    required: false
+  number:
+    description: "Phone number to call"
     required: true
-    default: "Omid"
-  number: # id of input
-    description: "phone number to call"
+  severity:
+    description: "How angry do you want th epoke to be?"
     required: true
-    default: "World"
+    default: "be nice"
+  twillioSID:
+    description: "Twillio account SID"
+    required: true
+  twillioAuthToken:
+    description: "Twillio Auth token"
+    required: true
+  twillioNumber:
+    description: "Twillio Number"
+    required: true
+
 outputs:
   time: # id of output
     description: "The time I poked them"
