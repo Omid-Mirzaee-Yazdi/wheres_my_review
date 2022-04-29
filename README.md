@@ -38,11 +38,11 @@ Sign up to [Twilio](https://www.twilio.com/ "Twilio") official web page. Then re
 
 # Example
 
-### Trigger a call on every push
+### Trigger a call on every pull request
 
   ```
 name: 'where is my review'
-on:  [push]
+on:  [pull_request]
     
 jobs:
   pokeTest:
