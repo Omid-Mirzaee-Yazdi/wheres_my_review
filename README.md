@@ -45,7 +45,7 @@ name: 'where is my review'
 on:  [pull_request]
     
 jobs:
-  pokeTest:
+  wheresMyReview:
     runs-on: ubuntu-latest
     name: where is my review
     steps:
