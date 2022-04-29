@@ -1,12 +1,15 @@
 # wheres_my_review
   wheres my review is a github action made to decrease the waiting time for your code review. 
-  you can check [the demo video](https://youtu.be/Q5WBOec-mCw "the demo video")
+  This github action will make a phone call to your slow co-worker and ask for a pull request review.
+  You can configure the severity of its speech tone to be nice, angry or outrageous.
+  NOTE: don't use outrageous mode unless neccessary, its going to be really angry 😂
+  you can check [the demo video here](https://youtu.be/Q5WBOec-mCw "the demo video")
 
 
 
 # How to use
 
-You will need to use  `uses: Omid-Mirzaee-Yazdi/wheres_my_review@v1.0.0` in your job step 
+You will need to introduce  `uses: Omid-Mirzaee-Yazdi/wheres_my_review@v1.0.0` in your job 
 
 
 
@@ -22,7 +25,7 @@ Sign up to [Twilio](https://www.twilio.com/ "Twilio") official web page. Then re
 | Paarameter | description | Required | Default | accepted values |
 | ---------- | ----------- | -------- | ------- | --------------- |
 | who | Name of the person to call | N | "" | string |
-| number | Phone number of the person to call | Y | null | string |
+| number | Target phone number | Y | null | string |
 | severity | How angry do you want the call to be | N | "outrageous" | "nice", "angry", "outrageous" |
 | twilioAuthToken | Your Twilio auth token | Y | null | string |
 | twilioSID | Your Twilio account SID | Y | null | string |
