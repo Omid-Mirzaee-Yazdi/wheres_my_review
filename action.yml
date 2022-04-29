@@ -1,6 +1,9 @@
 name: "Wheres my review"
-author: "OMid Mirzaee Yazdi"
-description: "poke your senoir developer to review your code"
+author: "Omid Mirzaee Yazdi"
+icon: "phone-call"
+color: "red"
+description: "Poke your senoir developer to review your code"
+
 inputs:
   who:
     description: "Who to poke"
