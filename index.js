@@ -1,17 +1,5 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
-
-const validate = (config) => {
-  const allowedSeverity = ["nice", "angry", "outrageous"];
-  for (const [key, value] of Object.entries(config)) {
-    if (key !== "who" || !value)
-      return { ok: false, error: `missing field ${key}` };
-    if (key === "severity" && !allowedSeverity.includes(value))
-      return { ok: false, error: `unaccepted value for field ${key}` };
-  }
-
-  return { ok: true, error: `` };
-};
+const utils = require("./utils");
 
 try {
   const config = {
@@ -22,9 +10,7 @@ try {
     twillioAuthToken: core.getInput("twillioAuthToken"),
     twillioNumber: core.getInput("twillioNumber"),
   };
-  console.log(`twillio added`);
-
-  const validationRes = validate(config);
+  const validationRes = utils.validate(config);
   if (!validationRes.ok) {
     core.setFailed(validationRes.error);
   }
@@ -54,8 +40,7 @@ try {
   const greeting = `${
     greetingList[Math.floor(Math.random() * greetingList.length)]
   }, ${config.who}...`;
-  const encodedSentece =
-    greeting.replaceAll(" ", "%20") + selectedSentence.replaceAll(" ", "%20");
+  const encodedSentece = utils.encode(greeting + selectedSentence);
   client.calls
     .create({
       url:
