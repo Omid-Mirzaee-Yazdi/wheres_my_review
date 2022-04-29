@@ -6,16 +6,16 @@ try {
     who: core.getInput("who"),
     number: core.getInput("number"),
     severity: core.getInput("severity"),
-    twillioSID: core.getInput("twillioSID"),
-    twillioAuthToken: core.getInput("twillioAuthToken"),
-    twillioNumber: core.getInput("twillioNumber"),
+    twilioSID: core.getInput("twilioSID"),
+    twilioAuthToken: core.getInput("twilioAuthToken"),
+    twilioNumber: core.getInput("twilioNumber"),
   };
   const validationRes = utils.validate(config);
   if (!validationRes.ok) {
     core.setFailed(validationRes.error);
   }
 
-  const client = require("twilio")(config.twillioSID, config.twillioAuthToken);
+  const client = require("twilio")(config.twilioSID, config.twilioAuthToken);
   const greetingList = ["hello", "hey", "whatsup"];
   const messages = {
     nice: [
@@ -46,11 +46,11 @@ try {
       url:
         "https://handler.twilio.com/twiml/EH3bedf0ab841a726b3a4fa442d181a108" +
         `?text=${encodedSentece}`,
-      from: config.twillioNumber,
+      from: config.twilioNumber,
       to: config.number,
     })
     .then((call) => console.log("called successfully", call))
-    .catch((e) => console.log("twillio error: ", e));
+    .catch((e) => console.log("twilio error: ", e));
 
   const time = new Date().toTimeString();
   core.setOutput("time", time);
