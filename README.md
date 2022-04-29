@@ -2,7 +2,6 @@
   wheres my review is a github action made to decrease the waiting time for your code review. 
   
   This github action will make a phone call to your slow co-worker and ask for a pull request review.
-  
   You can configure the severity of its speech tone to be nice, angry or outrageous.
   
   NOTE: don't use outrageous mode unless neccessary, its going to be really angry 😂
