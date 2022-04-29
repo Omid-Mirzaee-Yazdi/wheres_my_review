@@ -1,7 +1,9 @@
 name: "Wheres my review"
 author: "Omid Mirzaee Yazdi"
-icon: "phone-call"
-color: "red"
+branding:
+  icon: 'phone-call'  
+  color: 'red'
+
 description: "Poke your senoir developer to review your code"
 
 inputs:
@@ -16,14 +18,14 @@ inputs:
     description: "How angry do you want the poke to be?"
     required: false
     default: "outrageous"
-  twillioSID:
-    description: "Twillio account SID"
+  twilioSID:
+    description: "Twilio account SID"
     required: true
-  twillioAuthToken:
-    description: "Twillio Auth token"
+  twilioAuthToken:
+    description: "Twilio Auth token"
     required: true
-  twillioNumber:
-    description: "Twillio Number"
+  twilioNumber:
+    description: "Twilio Number"
     required: true
 
 outputs:
